@@ -15,7 +15,17 @@
   </ion-header>
 
   <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-button (click)="showBanner()" color="primary">Show Banner</ion-button>
+    <ion-button (click)="hideBanner()" color="primary">Hide Banner</ion-button>
+    <ion-button
+      *ngIf="isInterstitialLoaded"
+      (click)="showInterstitial()"
+      color="primary"
+    >
+      Show Interstitial
+    </ion-button>
+    <ion-button *ngIf="isRewardLoaded" (click)="showReward()" color="primary">
+      Show Reward
+    </ion-button>
   </div>
 </ion-content>
