@@ -15,17 +15,35 @@
   </ion-header>
 
   <div id="container">
-    <ion-button (click)="showBanner()" color="primary">Show Banner</ion-button>
-    <ion-button (click)="hideBanner()" color="primary">Hide Banner</ion-button>
     <ion-button
-      *ngIf="isInterstitialLoaded"
+      [disabled]="isBannerShowing"
+      (click)="showBanner()"
+      color="primary"
+    >
+      Show Banner
+    </ion-button>
+    <ion-button
+      [disabled]="!isBannerShowing"
+      (click)="hideBanner()"
+      color="primary"
+    >
+      Hide Banner
+    </ion-button>
+    <ion-button
+      [disabled]="!isInterstitialLoaded"
       (click)="showInterstitial()"
       color="primary"
     >
-      Show Interstitial
+      Interstitial
+      <ion-spinner *ngIf="!isInterstitialLoaded"></ion-spinner>
     </ion-button>
-    <ion-button *ngIf="isRewardLoaded" (click)="showReward()" color="primary">
+    <ion-button
+      [disabled]="!isRewardLoaded"
+      (click)="showReward()"
+      color="primary"
+    >
       Show Reward
+      <ion-spinner *ngIf="!isRewardLoaded"></ion-spinner>
     </ion-button>
   </div>
 </ion-content>

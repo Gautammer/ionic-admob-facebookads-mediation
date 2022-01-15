@@ -11,6 +11,7 @@ export class FolderPage implements OnInit {
   public folder: string;
   isInterstitialLoaded = false;
   isRewardLoaded = false;
+  isBannerShowing = false;
   constructor(
     private activatedRoute: ActivatedRoute,
     private adsService: AdsService
@@ -34,10 +35,12 @@ export class FolderPage implements OnInit {
 
   showBanner() {
     this.adsService.showBannerAd();
+    this.isBannerShowing = true;
   }
 
   hideBanner() {
     this.adsService.hideBanner();
+    this.isBannerShowing = false;
   }
 
   showInterstitial() {
