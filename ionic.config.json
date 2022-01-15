@@ -1,0 +1,7 @@
+{
+  "name": "ionic-admob-facebookads-mediation",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
