@@ -22,6 +22,7 @@
     "@ionic/angular": "^6.0.0",
     "cordova-android": "9.1.0",
     "cordova-ios": "6.2.0",
+    "cordova-plugin-consent": "^2.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
@@ -86,7 +87,10 @@
         "PLAY_SERVICES_VERSION": "20.2.0"
       },
       "cordova-plugin-androidx": {},
-      "cordova-plugin-androidx-adapter": {}
+      "cordova-plugin-androidx-adapter": {},
+      "cordova-plugin-consent": {
+        "UMP_VERSION": "1.0.0+"
+      }
     },
     "platforms": [
       "ios",
