@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AdsService } from '../services/ads/ads.service';
+declare let cordova: any;
 
 @Component({
   selector: 'app-folder',
@@ -58,4 +59,26 @@ export class FolderPage implements OnInit {
       this.isRewardLoaded = true;
     });
   }
+
+
+
+
+  // facebook ads code
+  showAds(){
+    var options = {
+      bannerid: '552274858773813_884925982175364', // this is my banner id for testing purpose
+      isTesting: true,
+
+  };
+  cordova.plugins.codeplayfacebookads.loadAndShowBannerAds(options, (event) => {
+      console.log('success', event)
+  }, (err) => {
+      console.log('err', err)
+  });
+  }
+
+  hideAds(){
+    cordova.plugins.codeplayfacebookads.distroyBannerAds();
+  }
 }
+

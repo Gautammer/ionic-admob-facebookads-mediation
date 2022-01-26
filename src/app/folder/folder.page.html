@@ -15,6 +15,10 @@
   </ion-header>
 
   <div id="container">
+
+  <ion-button (click)='showAds()' >Show Facebook Ad</ion-button>
+  <ion-button (click)='hideAds()' >Hide Facebook Ad</ion-button>
+
     <ion-button
       [disabled]="isBannerShowing"
       (click)="showBanner()"
